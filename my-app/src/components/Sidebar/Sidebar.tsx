@@ -1,12 +1,20 @@
-const Sidebar = () => {
+interface SidebarProps {
+  menuItems: string[]
+}
+
+const Sidebar = ({ menuItems }: SidebarProps) => {
+  if (!menuItems || menuItems.length === 0) {
+    return null
+  }
+
   return (
     <aside className="sidebar">
       <h2>Sidebar</h2>
       <nav>
         <ul>
-          <li>메뉴 1</li>
-          <li>메뉴 2</li>
-          <li>메뉴 3</li>
+          {menuItems.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
         </ul>
       </nav>
     </aside>

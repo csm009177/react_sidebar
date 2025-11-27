@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Sidebar from './components/Sidebar'
+import { defaultMenuItems } from './components/Sidebar' // 임시 메뉴
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-    <Sidebar />
+        <Sidebar menuItems={defaultMenuItems} />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
